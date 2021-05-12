@@ -16,37 +16,45 @@ public class Language implements jplag.Language {
 
 	}
 
+	@Override
 	public int errorsCount() {
 		// TODO Auto-generated method stub
 		return this.scanner.errorsCount();
 	}
 
+	@Override
 	public String[] suffixes() {
 		String[] res = { ".cpp", ".CPP", ".cxx", ".CXX", ".c++", ".C++", ".c", ".C", ".cc", ".CC", ".h", ".H",
 				".hpp", ".HPP", ".hh", ".HH" };
 		return res;
 	}
 
+	@Override
 	public String name() {
 		return "C/C++ Scanner [basic markup]";
 	}
 
+	@Override
 	public String getShortName() {
 		return "cpp";
 	}
 
+	@Override
 	public int min_token_match() {
 		return 12;
 	}
 
+	@Override
 	public boolean supportsColumns() {
 		return false;
 	}
 
+	@Override
 	public boolean isPreformated() {
 		return true;
 	}
 
+	@Override
 	public boolean usesIndex() {
 		return false;
 	}
@@ -55,10 +63,12 @@ public class Language implements jplag.Language {
 		return this.scanner.scan(dir, files);
 	}
 
+	@Override
 	public boolean errors() {
 		return this.scanner.getErrors();
 	}
 
+	@Override
 	public int noOfTokens() {
 		return jplag.cpp.CPPToken.numberOfTokens();
 	}

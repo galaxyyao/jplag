@@ -18,34 +18,42 @@ public class Language implements jplag.Language {
 
 	}
 	
-    public String[] suffixes() {
+    @Override
+	public String[] suffixes() {
     	String[] res = { ".java", ".JAVA" };
 		return res;
 	}
 
+	@Override
 	public String name() {
 		return "Javac 1.9+ based AST plugin";
 	}
 
+	@Override
 	public String getShortName() {
 		return "java19";
 	}
 
+	@Override
 	public int min_token_match() {
 		return 9;
 	}
+	@Override
 	public boolean supportsColumns() {
 		return true;
 	}
 
+	@Override
 	public boolean isPreformated() {
 		return true;
 	}
 
+	@Override
 	public boolean usesIndex() {
 		return false;
 	}
 
+	@Override
 	public int noOfTokens() {
 		return JavaToken.numberOfTokens();
 	}
@@ -59,10 +67,12 @@ public class Language implements jplag.Language {
 		return this.parser.parse(dir, files);
 	}
 
+	@Override
 	public boolean errors() {
 		return this.parser.getErrors();
 	}
 
+	@Override
 	public int errorsCount() {
 		return this.parser.errorsCount();
 	}

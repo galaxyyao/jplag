@@ -4,7 +4,7 @@ package jplag;
 import java.io.*;
 
 /**
- * One interface for all languages...
+ * interface for all languages
  */
 public interface Language {
 	public String[] suffixes();

@@ -12,23 +12,28 @@ public class Language implements jplag.Language {
 		this.parser.setProgram(program);
 	}
 
+	@Override
 	public int errorsCount() {
 		return this.parser.errorsCount();
 	}
 
+	@Override
 	public String[] suffixes() {
 		String[] res = { ".java", ".jav", ".JAVA", ".JAV" };
 		return res;
 	}
 
+	@Override
 	public String name() {
 		return "Java1.5 Parser";
 	}
 
+	@Override
 	public String getShortName() {
 		return "java15";
 	}
 
+	@Override
 	public int min_token_match() {
 		return 8;
 	}
@@ -37,22 +42,27 @@ public class Language implements jplag.Language {
 		return this.parser.parse(dir, files);
 	}
 
+	@Override
 	public boolean errors() {
 		return this.parser.getErrors();
 	}
 
+	@Override
 	public boolean supportsColumns() {
 		return true;
 	}
 
+	@Override
 	public boolean isPreformated() {
 		return true;
 	}
 
+	@Override
 	public boolean usesIndex() {
 		return false;
 	}
 
+	@Override
 	public int noOfTokens() {
 		return jplag.java15.JavaToken.numberOfTokens();
 	}

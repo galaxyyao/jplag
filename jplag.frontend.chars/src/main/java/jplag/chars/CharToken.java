@@ -17,14 +17,22 @@ public class CharToken extends jplag.Token {
 		this(type, file, -1, parser);
 	}
 
+	/**
+	 * so that the result-index is sorted correctly
+	 * @return
+	 */
+	@Override
 	public int getLine() {
-		return index; // so that the result-index is sorted correctly
+		return index;
 	}
 
+	@Override
 	public int getColumn() { return 0; }
 
+	@Override
 	public int getLength() { return 0; }
 
+	@Override
 	public int getIndex() { return index; }
 
 	public static String type2string(int type, Parser parser) {

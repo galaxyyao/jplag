@@ -13,23 +13,28 @@ public class Language implements jplag.Language {
         this.parser.setProgram(program);
     }
 
+    @Override
     public String[] suffixes() {
         String[] res = {".py"};
         return res;
     }
 
+    @Override
     public int errorsCount() {
         return this.parser.errorsCount();
     }
 
+    @Override
     public String name() {
         return "Python3 Parser";
     }
 
+    @Override
     public String getShortName() {
         return "python3";
     }
 
+    @Override
     public int min_token_match() {
         return 12;
     }
@@ -38,22 +43,27 @@ public class Language implements jplag.Language {
         return this.parser.parse(dir, files);
     }
 
+    @Override
     public boolean errors() {
         return this.parser.getErrors();
     }
 
+    @Override
     public boolean supportsColumns() {
         return true;
     }
 
+    @Override
     public boolean isPreformated() {
         return true;
     }
 
+    @Override
     public boolean usesIndex() {
         return false;
     }
 
+    @Override
     public int noOfTokens() {
         return jplag.python3.Python3Token.numberOfTokens();
     }

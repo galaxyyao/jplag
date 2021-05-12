@@ -8,26 +8,32 @@ public class JavaToken extends jplag.Token implements JavaTokenConstants {
 		super(type, file, line, column, length);
 	}
 
+	@Override
 	public int getLine() {
 		return line;
 	}
 
+	@Override
 	public int getColumn() {
 		return column;
 	}
 
+	@Override
 	public int getLength() {
 		return length;
 	}
 
-	public void setLine(int line) {
+	@Override
+    public void setLine(int line) {
 		this.line = line;
 	}
 
+	@Override
 	public void setColumn(int column) {
 		this.column = column;
 	}
 
+	@Override
 	public void setLength(int length) {
 		this.length = length;
 	}

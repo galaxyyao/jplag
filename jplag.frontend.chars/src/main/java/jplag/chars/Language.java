@@ -17,6 +17,7 @@ public class Language implements jplag.Language {
 		this.parser.setProgram(this.program);
 	}
 
+	@Override
 	public String[] suffixes() {
 		String[] res = { ".TXT", ".txt", ".ASC", ".asc", ".TEX", ".tex" };
 		return res;
@@ -27,19 +28,23 @@ public class Language implements jplag.Language {
 	 * 
 	 * @see jplag.Language#errorsCount()
 	 */
+	@Override
 	public int errorsCount() {
 		// TODO Auto-generated method stub
 		return this.parser.errorsCount();
 	}
 
+	@Override
 	public String name() {
 		return "Character Parser";
 	}
 
+	@Override
 	public String getShortName() {
 		return "char";
 	}
 
+	@Override
 	public int min_token_match() {
 		return 10;
 	}
@@ -48,22 +53,27 @@ public class Language implements jplag.Language {
 		return this.parser.parse(dir, files);
 	}
 
+	@Override
 	public boolean errors() {
 		return this.parser.getErrors();
 	}
 
+	@Override
 	public boolean supportsColumns() {
 		return false;
 	}
 
+	@Override
 	public boolean isPreformated() {
 		return false;
 	}
 
+	@Override
 	public boolean usesIndex() {
 		return true;
 	}
 
+	@Override
 	public int noOfTokens() {
 		return jplag.chars.CharToken.numberOfTokens();
 	}

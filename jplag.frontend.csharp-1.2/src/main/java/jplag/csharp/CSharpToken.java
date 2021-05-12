@@ -9,11 +9,17 @@ public class CSharpToken extends jplag.Token implements CSharpTokenConstants {
     super(type, file, line, column, length);
  }
 
+  @Override
   public int getLine() { return line; }
+  @Override
   public int getColumn() { return column; }
+  @Override
   public int getLength() { return length; }
+  @Override
   public void setLine(int line) { this.line = line; }
+  @Override
   public void setColumn(int column) { this.column = column; }
+  @Override
   public void setLength(int length) { this.length = length; }
 
   public static String type2string(int type) {

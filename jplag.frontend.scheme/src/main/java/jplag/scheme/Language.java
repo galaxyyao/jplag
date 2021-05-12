@@ -12,6 +12,7 @@ public class Language implements jplag.Language {
 
 	}
 
+	@Override
 	public int errorsCount() {
 		// TODO Auto-generated method stub
 		return this.parser.errorsCount();
@@ -20,31 +21,38 @@ public class Language implements jplag.Language {
 	private jplag.scheme.Parser parser;//noch nicht instanziert? siehe
 									   // Konstruktor
 
+	@Override
 	public String[] suffixes() {
 		String[] res = { ".scm", ".SCM", ".ss", ".SS" };
 		return res;
 	}
 
+	@Override
 	public String name() {
 		return "SchemeR4RS Parser [basic markup]";
 	}
 
+	@Override
 	public String getShortName() {
 		return "scheme";
 	}
 
+	@Override
 	public int min_token_match() {
 		return 13;
 	}
 
+	@Override
 	public boolean supportsColumns() {
 		return false;
 	}
 
+	@Override
 	public boolean isPreformated() {
 		return true;
 	}
 
+	@Override
 	public boolean usesIndex() {
 		return false;
 	}
@@ -53,10 +61,12 @@ public class Language implements jplag.Language {
 		return this.parser.parse(dir, files);
 	}
 
+	@Override
 	public boolean errors() {
 		return this.parser.getErrors();
 	}
 
+	@Override
 	public int noOfTokens() {
 		return jplag.scheme.SchemeToken.numberOfTokens();
 	}

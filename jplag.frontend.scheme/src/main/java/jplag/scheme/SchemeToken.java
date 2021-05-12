@@ -10,10 +10,14 @@ public class SchemeToken extends jplag.Token implements SchemeTokenConstants {
     super(type,file,zeile);
   }
 
+  @Override
   public int getLine() { return line; }
+  @Override
   public void setLine(int line) { this.line = line; }
 
+  @Override
   public int getColumn() {return 0;}
+  @Override
   public int getLength() {return 0;}
 
   public static String type2string(int type) {
