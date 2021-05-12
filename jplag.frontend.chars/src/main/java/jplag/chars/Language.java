@@ -2,17 +2,17 @@ package jplag.chars;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 /*
  * read in text files as characters
  */
 public class Language implements jplag.Language {
-	private ProgramI program;
+	private IProgram program;
 
 	private jplag.chars.Parser parser = new Parser();
 
-	public Language(ProgramI program) {
+	public Language(IProgram program) {
 		this.program = program;
 		this.parser.setProgram(this.program);
 	}

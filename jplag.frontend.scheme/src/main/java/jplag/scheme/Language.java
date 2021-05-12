@@ -2,11 +2,11 @@ package jplag.scheme;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 public class Language implements jplag.Language {
 
-	public Language(ProgramI program) {
+	public Language(IProgram program) {
 		this.parser = new Parser();
 		this.parser.setProgram(program);
 

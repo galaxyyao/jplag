@@ -2,7 +2,7 @@ package jplag.java15;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 /**
  * Java 1.5 parser with method separators; if you know why these separators
@@ -12,7 +12,7 @@ import jplag.ProgramI;
 public class LanguageWithDelimitedMethods implements jplag.Language {
 	private Parser parser;
 
-	public LanguageWithDelimitedMethods(ProgramI program) {
+	public LanguageWithDelimitedMethods(IProgram program) {
 		this.parser = new Parser(true);
 		this.parser.setProgram(program);
 	}

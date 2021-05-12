@@ -3,7 +3,7 @@ package jplag.text;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 /**
  * @Changed by Emeric Kwemou 29.01.2005
@@ -11,11 +11,11 @@ import jplag.ProgramI;
  */
 public class Language implements jplag.Language {
 
-	private ProgramI program;
+	private IProgram program;
 
 	private jplag.text.Parser parser = new jplag.text.Parser();
 
-	public Language(ProgramI program) {
+	public Language(IProgram program) {
 		this.program = program;
 		this.parser.setProgram(this.program);
 	}

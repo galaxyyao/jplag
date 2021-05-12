@@ -1,25 +1,5 @@
 package jplag;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Properties;
-import java.util.TimeZone;
-import java.util.Vector;
-
 import jplag.clustering.Cluster;
 import jplag.clustering.Clusters;
 import jplag.clustering.SimilarityMatrix;
@@ -27,13 +7,16 @@ import jplag.options.Options;
 import jplag.options.util.Messages;
 import jplagUtils.PropertiesLoader;
 
-/*
- * This class coordinates the whole program flow.
- * The revision history can be found on https://svn.ipd.kit.edu/trac/jplag/wiki/JPlag/History
- *
- */
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
-public class Program implements ProgramI {
+/**
+ * This class coordinates the whole program flow.
+ * @author
+ */
+public class Program implements IProgram {
     private static final Properties versionProps = PropertiesLoader.loadProps("jplag/version.properties");
     public static final String name = "JPlag" + versionProps.getProperty("version", "devel");
     public static final String name_long = "JPlag (Version " + versionProps.getProperty("version", "devel") + ")";
@@ -44,11 +27,13 @@ public class Program implements ProgramI {
     public String currentSubmissionName = "<Unknown submission>";
     public Vector<String> errorVector = new Vector<String>();
 
+    @Override
     public void addError(String errorMsg) {
         errorVector.add("[" + currentSubmissionName + "]\n" + errorMsg);
         print(errorMsg, null);
     }
 
+    @Override
     public void print(String normal, String lng) {
         if (options.verbose_parser) {
             if (lng != null)
@@ -787,18 +772,6 @@ public class Program implements ProgramI {
         return options.getCountryTag();
     }
 
-    /*
-     * Distribution: Program given away to:
-     *
-     * 0: Server version
-     *
-     * 1: David Klausner 2: Ronald Kostoff 3: Bob Carlson 4: Neville Newman
-     */
-
-    public int get_distri() {
-        return 0;
-    }
-
     public File get_jplagResult() {
         return new File(options.result_dir);
 
@@ -893,8 +866,9 @@ public class Program implements ProgramI {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else
+        } else {
             System.out.print(str);
+        }
     }
 
     // PARSE

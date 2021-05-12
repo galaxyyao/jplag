@@ -8,7 +8,7 @@ package jplag;
  * @author Emeric Kwemou
  */
 public abstract class Parser {
-  protected ProgramI program;
+  protected IProgram program;
   protected int errors    = 0;
   private   int errorsSum = 0;
   
@@ -24,11 +24,11 @@ public abstract class Parser {
 	  errorsSum+=errors;	
   }
 
-  public ProgramI getProgram() {
+  public IProgram getProgram() {
 	  return program;
   }
   
-  public void setProgram(ProgramI prog) {
+  public void setProgram(IProgram prog) {
 	  this.program=prog;
   }
 }

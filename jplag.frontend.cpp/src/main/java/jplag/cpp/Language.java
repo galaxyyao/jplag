@@ -2,7 +2,7 @@ package jplag.cpp;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 /*
  * Leider werden C/C++ nicht geparst, sondern nur gescannt...
@@ -10,7 +10,7 @@ import jplag.ProgramI;
 public class Language implements jplag.Language {
 	private Scanner scanner;
 
-	public Language(ProgramI program) {
+	public Language(IProgram program) {
 		this.scanner = new Scanner();
 		this.scanner.setProgram(program);
 

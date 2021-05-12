@@ -2,13 +2,12 @@ package jplag.javax;
 
 import java.io.*;
 
-import jplag.ProgramI;
-import jplag.javax.Parser;
+import jplag.IProgram;
 
 public class Language implements jplag.Language {
 	private Parser parser;
 
-	public Language(ProgramI program) {
+	public Language(IProgram program) {
 		this.parser = new Parser();
 		this.parser.setProgram(program);
 

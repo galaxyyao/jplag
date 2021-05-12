@@ -1,6 +1,6 @@
 package jplag;
 
-public interface ProgramI {
+public interface IProgram {
 	public void addError(String errorMsg) ;
 	/**
 	 * 

@@ -1,4 +1,4 @@
-JPlag Frontend Pack
+# JPlag Frontend Pack
 
 The JPlag system uses different frontends to transform the input files into a
 token stream, which abstracts very much from the original source code. For
@@ -16,7 +16,7 @@ Search for "parser.add(" to find these locations. The token types are defined
 in "src/main/java/jplag/java/JavaToken.java" and "src/main/java/jplag/java/JavaTokenConstants.java".
 
 After building the source with a simple "mvn compile", you can test the parser by 
-invoking the main method of jplag.java.Parser with a Java file to parse as arguemtn:
+invoking the main method of jplag.java.Parser with a Java file to parse as argument:
 
 java -cp "antlr.jar;build" jplag.java.Parser src/main/java/jplag/java/Parser.java
 

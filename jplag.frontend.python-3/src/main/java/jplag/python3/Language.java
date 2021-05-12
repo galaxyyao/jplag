@@ -2,13 +2,13 @@ package jplag.python3;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 public class Language implements jplag.Language {
 
     private jplag.python3.Parser parser;
 
-    public Language(ProgramI program) {
+    public Language(IProgram program) {
         this.parser = new jplag.python3.Parser();
         this.parser.setProgram(program);
     }

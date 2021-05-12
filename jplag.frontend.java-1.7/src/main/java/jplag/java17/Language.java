@@ -2,12 +2,12 @@ package jplag.java17;
 
 import java.io.File;
 
-import jplag.ProgramI;
+import jplag.IProgram;
 
 public class Language implements jplag.Language {
 	private jplag.java17.Parser parser;
 
-	public Language(ProgramI program) {
+	public Language(IProgram program) {
 		this.parser = new jplag.java17.Parser();
 		this.parser.setProgram(program);
 	}
