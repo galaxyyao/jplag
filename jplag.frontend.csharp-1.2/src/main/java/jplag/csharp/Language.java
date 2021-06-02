@@ -19,7 +19,6 @@ public class Language implements jplag.Language {
 	}
 
 	public int errorsCount() {
-		// TODO Auto-generated method stub
 		return this.parser.errorsCount();
 	}
 
@@ -47,7 +46,7 @@ public class Language implements jplag.Language {
 		return true;
 	}
 
-	public boolean isPreformated() {
+	public boolean isPreformatted() {
 		return true;
 	}
 
